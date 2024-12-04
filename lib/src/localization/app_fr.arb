@@ -1,0 +1,6 @@
+{
+  "appTitle": "Redica",
+  "@appTitle": {
+    "description": "le titre de l'application"
+  }
+}
