@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:redica/src/ui/config/router_config.dart';
+import 'package:redica/src/ui/config/app_routes_config.dart';
 
 import 'application/controllers/settings_controller.dart';
 
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appRoutes = AppRoutesConfig(settingsController: settingsController);
     // Glue the SettingsController to the MaterialApp.
     //
     // The ListenableBuilder Widget listens to the SettingsController for changes.
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
 
             // Define a function to handle named routes in order to support
             // Flutter web url navigation and deep linking.
-            routerConfig: routerConfig(settingsController),
+            routerConfig: appRoutes.router,
           ),
         );
       },

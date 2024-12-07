@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:redica/src/ui/config/app_routes_config.dart';
 import 'package:redica/src/ui/config/navigation_config.dart';
 import 'package:redica/src/ui/enums/app_routes_enum.dart';
 import 'package:redica/src/ui/widgets/bottom_navigation_bar_widget.dart';
 import 'package:redica/src/ui/widgets/dashboard_widget.dart';
 import 'package:redica/src/ui/widgets/search_bar_widget.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class FamilyTreeView extends StatefulWidget {
+  const FamilyTreeView({super.key});
 
   @override
-  HomeViewState createState() => HomeViewState();
+  FamilyTreeViewState createState() => FamilyTreeViewState();
 }
 
-class HomeViewState extends State<HomeView> {
-  int _selectedIndex = AppRoutesEnum.home.index;
+class FamilyTreeViewState extends State<FamilyTreeView> {
+  int _selectedIndex = AppRoutesEnum.familyTree.index;
 
   void _onItemTapped(int index) {
     setState(() {

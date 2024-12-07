@@ -5,15 +5,15 @@ import 'package:redica/src/ui/widgets/bottom_navigation_bar_widget.dart';
 import 'package:redica/src/ui/widgets/dashboard_widget.dart';
 import 'package:redica/src/ui/widgets/search_bar_widget.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class FamilyListView extends StatefulWidget {
+  const FamilyListView({super.key});
 
   @override
-  HomeViewState createState() => HomeViewState();
+  FamilyListViewState createState() => FamilyListViewState();
 }
 
-class HomeViewState extends State<HomeView> {
-  int _selectedIndex = AppRoutesEnum.home.index;
+class FamilyListViewState extends State<FamilyListView> {
+  int _selectedIndex = AppRoutesEnum.familyList.index;
 
   void _onItemTapped(int index) {
     setState(() {

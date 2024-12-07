@@ -5,15 +5,15 @@ import 'package:redica/src/ui/widgets/bottom_navigation_bar_widget.dart';
 import 'package:redica/src/ui/widgets/dashboard_widget.dart';
 import 'package:redica/src/ui/widgets/search_bar_widget.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class AccountView extends StatefulWidget {
+  const AccountView({super.key});
 
   @override
-  HomeViewState createState() => HomeViewState();
+  AccountViewState createState() => AccountViewState();
 }
 
-class HomeViewState extends State<HomeView> {
-  int _selectedIndex = AppRoutesEnum.home.index;
+class AccountViewState extends State<AccountView> {
+  int _selectedIndex = AppRoutesEnum.account.index;
 
   void _onItemTapped(int index) {
     setState(() {

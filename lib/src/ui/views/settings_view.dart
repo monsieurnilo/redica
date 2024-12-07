@@ -1,17 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:redica/src/ui/config/navigation_config.dart';
+import 'package:redica/src/ui/enums/app_routes_enum.dart';
 
 import '../../application/controllers/settings_controller.dart';
+import '../widgets/bottom_navigation_bar_widget.dart';
 
-/// Displays the various settings that can be customized by the user.
-///
-/// When a user changes a setting, the SettingsController is updated and
-/// Widgets that listen to the SettingsController are rebuilt.
-class SettingsView extends StatelessWidget {
+class SettingsView extends StatefulWidget {
   const SettingsView({super.key, required this.controller});
 
-  static const routeName = '/settings';
-
   final SettingsController controller;
+
+  @override
+  SettingsViewState createState() => SettingsViewState();
+}
+
+class SettingsViewState extends State<SettingsView> {
+  late final SettingsController controller = widget.controller;
+
+  static const routeName = '/settings';
+  int _selectedIndex = AppRoutesEnum.settings.index;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    onItemTapped(context, index);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +59,10 @@ class SettingsView extends StatelessWidget {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBarWidget(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }
